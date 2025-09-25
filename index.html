@@ -4,93 +4,233 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Иван Иванов - Веб-разработчик</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Подключение шрифтов с Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* Общие стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        /* Шапка */
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+        
+        /* Основные секции */
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        /* Обо мне */
+        .about {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #3498db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3em;
+            flex-shrink: 0;
+        }
+        
+        /* Навыки */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .skill-category {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 5px 0;
+            border-bottom: 1px dashed #bdc3c7;
+        }
+        
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Контакты */
+        .contacts {
+            text-align: center;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .contact-link {
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .contact-link:hover {
+            background: #2980b9;
+        }
+        
+        /* Подвал */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            margin-top: 20px;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 600px) {
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-link {
+                width: 200px;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Шапка сайта с навигацией -->
+    <!-- Шапка с именем и должностью -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="#about">Обо мне</a></li>
-                <li><a href="#skills">Навыки</a></li>
-                <li><a href="#contacts">Контакты</a></li>
-            </ul>
-        </nav>
+        <h1>Иван Иванов</h1>
+        <p class="tagline">Веб-разработчик</p>
+        <p>Создаю современные и функциональные сайты</p>
     </header>
 
-    <!-- Основное содержимое -->
-    <main>
-        <!-- Секция с приветствием -->
-        <section id="hero">
-            <div class="hero-content">
-                <h1>Иван Иванов</h1>
-                <p class="tagline">Веб-разработчик</p>
-                <p>Создаю современные и удобные сайты</p>
-                <a href="#contacts" class="cta-button">Связаться со мной</a>
+    <!-- Секция "Обо мне" -->
+    <section id="about">
+        <h2>Обо мне</h2>
+        <div class="about">
+            <div class="avatar">ИИ</div>
+            <div class="about-text">
+                <p>Привет! Я веб-разработчик с 3-летним опытом создания сайтов и веб-приложений.</p>
+                <p>Специализируюсь на frontend разработке, но также имею опыт работы с backend.</p>
+                <p>Люлю чистый код, простые решения и сложные задачи.</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Секция "Обо мне" -->
-        <section id="about">
-            <h2>Обо мне</h2>
-            <div class="about-content">
-                <img src="https://via.placeholder.com/300x300/4a6fa5/ffffff?text=Фото" alt="Фото Ивана Иванова" class="avatar">
-                <div class="about-text">
-                    <p>Привет! Меня зовут Иван. Я занимаюсь веб-разработкой более 3-х лет.</p>
-                    <p>Люблю создавать понятные и эффективные интерфейсы, которые решают задачи пользователей и бизнеса. В своей работе уделяю внимание качеству кода, производительности и доступности.</p>
-                    <p>Постоянно изучаю новые технологии и frameworks, чтобы оставаться в курсе современных тенденций.</p>
-                </div>
+    <!-- Секция "Навыки" -->
+    <section id="skills">
+        <h2>Навыки</h2>
+        <div class="skills">
+            <div class="skill-category">
+                <h3>Frontend</h3>
+                <ul>
+                    <li>HTML5/CSS3</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>Адаптивная верстка</li>
+                </ul>
             </div>
-        </section>
-
-        <!-- Секция "Навыки" -->
-        <section id="skills">
-            <h2>Навыки</h2>
-            <div class="skills-container">
-                <div class="skill-item">
-                    <h3>Frontend</h3>
-                    <ul>
-                        <li>HTML5, CSS3, JavaScript (ES6+)</li>
-                        <li>React, Vue.js</li>
-                        <li>Адаптивная верстка</li>
-                    </ul>
-                </div>
-                <div class="skill-item">
-                    <h3>Backend</h3>
-                    <ul>
-                        <li>Node.js, PHP</li>
-                        <li>Базы данных: MySQL, MongoDB</li>
-                    </ul>
-                </div>
-                <div class="skill-item">
-                    <h3>Инструменты</h3>
-                    <ul>
-                        <li>Git, GitHub</li>
-                        <li>Webpack, Gulp</li>
-                        <li>Figma, Photoshop</li>
-                    </ul>
-                </div>
+            <div class="skill-category">
+                <h3>Backend</h3>
+                <ul>
+                    <li>Node.js</li>
+                    <li>PHP</li>
+                    <li>MySQL</li>
+                    <li>MongoDB</li>
+                </ul>
             </div>
-        </section>
-
-        <!-- Секция "Контакты" -->
-        <section id="contacts">
-            <h2>Контакты</h2>
-            <p>Буду рад новым предложениям и проектам! Свяжитесь со мной удобным для вас способом.</p>
-            <div class="contacts-links">
-                <a href="mailto:ivanov@example.com">ivanov@example.com</a>
-                <a href="tel:+79991234567">+7 (999) 123-45-67</a>
-                <a href="https://t.me/ivanov" target="_blank">Telegram</a>
-                <a href="https://github.com/ivanov" target="_blank">GitHub</a>
+            <div class="skill-category">
+                <h3>Инструменты</h3>
+                <ul>
+                    <li>Git</li>
+                    <li>Webpack</li>
+                    <li>Figma</li>
+                    <li>Photoshop</li>
+                </ul>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <!-- Подвал сайта -->
+    <!-- Секция "Контакты" -->
+    <section id="contacts" class="contacts">
+        <h2>Контакты</h2>
+        <p>Свяжитесь со мной для обсуждения вашего проекта</p>
+        <div class="contact-links">
+            <a href="mailto:ivanov@example.com" class="contact-link">Email</a>
+            <a href="tel:+79991234567" class="contact-link">Телефон</a>
+            <a href="https://t.me/ivanov" class="contact-link">Telegram</a>
+            <a href="https://github.com/ivanov" class="contact-link">GitHub</a>
+        </div>
+    </section>
+
+    <!-- Подвал -->
     <footer>
         <p>&copy; 2023 Иван Иванов. Все права защищены.</p>
     </footer>
